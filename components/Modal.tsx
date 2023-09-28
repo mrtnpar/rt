@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { PropsWithChildren, useEffect, useRef, useState } from "react";
+import { PropsWithChildren, useEffect, useRef } from "react";
 
 interface ModalProps {
   open: boolean;

@@ -32,8 +32,8 @@ export const Row = ({
         return newCompanies.concat(data);
       });
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [entry]);
+    //
+  }, [data, entry]);
 
   function handleAnimationComplete() {
     setX((x) => {
