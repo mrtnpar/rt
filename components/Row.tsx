@@ -18,8 +18,8 @@ export const Row = ({
   return (
     <div className="w-max">
       <motion.div
-        className="flex gap-2 flex-wrap"
-        animate={{ x: "-50%" }}
+        className="flex gap-2 flex-wrap [--x:calc(-50%-0.25rem)]"
+        animate={{ x: "var(--x)" }}
         transition={{
           ease: "linear",
           duration,
