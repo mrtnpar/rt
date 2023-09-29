@@ -24,11 +24,11 @@ export default function Home() {
   return (
     <main className="grid place-items-center h-full">
       <Container>
-        <Row data={dataA} duration={15} handleOpen={openModal} />
-        <Row data={dataB} duration={7} handleOpen={openModal} />
-        <Row data={dataC} duration={4} handleOpen={openModal} />
-        <Row data={dataA} duration={8} handleOpen={openModal} />
-        <Row data={dataB} duration={6} handleOpen={openModal} />
+        <Row data={dataA} duration={20} handleOpen={openModal} />
+        <Row data={dataB} duration={18} handleOpen={openModal} />
+        <Row data={dataC} duration={17} handleOpen={openModal} />
+        <Row data={dataB} duration={19} handleOpen={openModal} />
+        <Row data={dataA} duration={16} handleOpen={openModal} />
       </Container>
 
       <Modal open={modalOpen} handleClose={closeModal}>

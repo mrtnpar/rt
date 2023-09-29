@@ -1,10 +1,6 @@
-import { useIntersectionObserver } from "@uidotdev/usehooks";
-import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { Company } from "@/shared";
-
-const ANIMATION_LENGTH = 500;
 
 interface RowProps {
   data: Company[];
@@ -14,44 +10,21 @@ interface RowProps {
 
 export const Row = ({
   data,
-  duration = 15,
+  duration = 20,
   handleOpen = (label: string) => {},
 }: RowProps) => {
-  const [companies, setCompanies] = useState(data);
-  const [x, setX] = useState(-ANIMATION_LENGTH);
-  const [refEndPixel, entry] = useIntersectionObserver({
-    threshold: 0,
-    root: null,
-    rootMargin: "0px",
-  });
-
-  useEffect(() => {
-    if (entry?.isIntersecting) {
-      setCompanies((currState) => {
-        const newCompanies = Array.from(currState);
-        return newCompanies.concat(data);
-      });
-    }
-    //
-  }, [data, entry]);
-
-  function handleAnimationComplete() {
-    setX((x) => {
-      x += -ANIMATION_LENGTH;
-      return x;
-    });
-  }
+  const companies = data.concat(data);
 
   return (
     <div className="w-max">
       <motion.div
         className="flex gap-2 flex-wrap"
-        animate={{ x }}
+        animate={{ x: "-50%" }}
         transition={{
           ease: "linear",
           duration,
+          repeat: Infinity,
         }}
-        onAnimationComplete={handleAnimationComplete}
       >
         {companies.map((company, index) => {
           return (
@@ -82,7 +55,6 @@ export const Row = ({
             </button>
           );
         })}
-        <div ref={refEndPixel} className="w-[1px] h-[1px]" />
       </motion.div>
     </div>
   );

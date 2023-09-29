@@ -9,7 +9,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@uidotdev/usehooks": "^2.3.1",
     "framer-motion": "^10.16.4",
     "next": "latest",
     "react": "latest",
